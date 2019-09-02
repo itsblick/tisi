@@ -1,0 +1,54 @@
+//Spawn helper function
+void SpawnObject( string type, vector position, vector orientation )
+{
+    auto obj = GetGame().CreateObject( type, position );
+    obj.SetPosition( position );
+    obj.SetOrientation( orientation );
+    obj.SetOrientation( obj.GetOrientation() ); //Collision fix
+    obj.Update();
+    obj.SetAffectPathgraph( true, false );
+    if( obj.CanAffectPathgraph() ) GetGame().GetCallQueue( CALL_CATEGORY_SYSTEM ).CallLater( GetGame().UpdatePathgraphRegionByObject, 100, false, obj );
+}
+
+//Your custom spawned objects
+SpawnObject( "Land_Mil_Tent_Big3", "1769.828857 452.900513 14139.926758", "-20.000000 0.000000 0.000000" );
+SpawnObject( "Land_Mil_Tent_Big1_1", "1746.999878 451.730011 14141.337891", "70.000000 0.000000 0.000000" );
+SpawnObject( "Land_Mil_Tent_Big1_2", "1743.184326 451.726929 14151.634766", "70.000000 0.000000 0.000000" );
+SpawnObject( "Land_Mil_Tent_Big1_3", "1735.721924 451.705841 14173.337891", "70.000000 0.000000 0.000000" );
+SpawnObject( "Land_Mil_Tent_Big1_4", "1739.357178 451.717377 14162.602539", "70.000000 0.000000 0.000000" );
+SpawnObject( "Land_Mil_Tent_Big3", "1744.038696 452.900513 14098.238281", "70.000000 0.000000 0.000000" );
+SpawnObject( "Land_Tisy_RadarB_Base", "1762.634888 449.989990 14007.112305", "162.999985 0.000000 0.000000" );
+SpawnObject( "Land_Tisy_RadarB_Antenna", "1752.211060 450.000000 13999.565430", "-110.000000 0.000000 0.000000" );
+SpawnObject( "Wreck_UH1Y", "1712.584106 453.576935 14231.093750", "0.000000 0.000000 0.000000" );
+SpawnObject( "Wreck_UH1Y", "1745.351685 451.852295 14044.041016", "51.000000 0.000000 0.000000" );
+SpawnObject( "Wreck_UH1Y", "1681.444946 452.782196 14030.418945", "119.999992 0.000000 0.000000" );
+SpawnObject( "Land_Mil_Fortified_Nest_Watchtower", "1764.882202 453.798676 14117.215820", "-109.999977 0.000000 0.000000" );
+SpawnObject( "Land_Mil_Tent_Big4", "1735.745728 452.931549 14245.137695", "-20.000000 0.000000 0.000000" );
+SpawnObject( "Land_Mil_Tent_Big4", "1708.230225 452.931549 14253.904297", "-110.000000 0.000000 0.000000" );
+SpawnObject( "Land_Mil_Radar_Mobile1", "1677.992310 450.333588 14004.085938", "34.000000 0.000000 0.000000" );
+SpawnObject( "Land_Mil_Radar_Mobile2", "1780.429565 451.599762 14108.127930", "-47.000004 0.000000 0.000000" );
+SpawnObject( "Land_Mil_Radar_Mobile3", "1698.253174 460.692719 14172.616211", "24.000015 0.000000 0.000000" );
+SpawnObject( "bldr_mil_radar_mobile_generator", "1729.173218 453.364319 14220.436523", "70.000000 0.000000 0.000000" );
+SpawnObject( "bldr_mil_radar_mobile_generator", "1723.107178 453.368866 14211.713867", "70.000000 0.000000 0.000000" );
+SpawnObject( "Land_Mil_ATC_Small", "1730.647217 461.911499 14120.808594", "-17.000004 0.000000 0.000000" );
+SpawnObject( "Land_Mil_GuardTower", "1759.273315 457.984436 14190.091797", "-105.999985 0.000000 0.000000" );
+SpawnObject( "Land_Sawmill_Illuminanttower", "1711.121216 461.700775 14200.036133", "70.000000 0.000000 0.000000" );
+SpawnObject( "Land_Mil_ReinforcedTank1", "1668.070435 449.623535 13973.090820", "-75.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_bmp2", "1735.681641 452.526154 14192.730469", "75.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_brdm", "1732.538452 452.247284 14204.350586", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_bulldozer", "1718.274658 453.224060 14187.224609", "-131.999939 0.000000 0.000000" );
+SpawnObject( "Wreck_Mi8", "1726.740723 453.405609 14199.786133", "105.999992 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_digger", "1721.723877 454.878723 14177.602539", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_hmmwv", "1714.853638 452.637115 14124.279297", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_powgen", "1677.776123 452.514008 14274.490234", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_hmmwv", "1672.119995 452.637115 14274.923828", "-61.999992 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_t72_chassis", "1741.566162 452.510132 14071.039063", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_t72_turret", "1736.424194 452.546570 14065.189453", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_ural", "1744.915283 451.181030 14021.003906", "-10.000004 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_trailer_flat", "1768.378784 451.243469 14027.335938", "96.000023 0.000000 0.000000" );
+SpawnObject( "Land_Wreck_V3S", "1704.348633 453.332947 14118.169922", "138.999985 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_bmp1", "1672.836670 452.891541 14176.458984", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_brdm", "1677.688354 452.277344 14130.654297", "30.000006 0.000000 0.000000" );
+SpawnObject( "bldr_wreck_trailer_cistern", "1650.682251 451.730011 14209.934570", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_Dead_pile1", "1672.189697 452.033997 14271.385742", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_Dead_MassGrave", "1764.152100 450.341553 14052.495117", "0.000000 0.000000 0.000000" );
